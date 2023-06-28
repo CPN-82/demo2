@@ -7,10 +7,14 @@ label 'master'
           }
           stages {
  
-
+stage('clean') {
+    steps {
+      sh 'mvn clean '
+    }
+  }
   stage('build') {
     steps {
-      sh 'mvn clean install'
+      sh 'mvn install'
     }
   }
 
